@@ -1,0 +1,71 @@
+<html>
+    <head>
+         <script>
+            function lw(){
+
+                let x=document.getElementById("area1").value;
+                let y=document.getElementById("previewArea").contentWindow.document;
+                let z= "<head>" + document.getElementById("area2").value  + "</head>";
+                //y.innerHTML=x.value;
+                 // y.innerHTML = x.value + y.value;
+                 y.open();
+                 y.write(x +z);
+                 y.close();
+                }  
+     </script>
+     <style>
+          * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+        div.display{
+    
+            width : 100%;
+            height: 50%;
+            border: 2px ridge peru;
+            
+        }
+        #area1{
+            display: block;
+            width: 50%;
+            border: 2px solid rgba(230, 75, 228, 0.086);
+            font: italic bold 16px/20px Georgia, serif;
+            background-color: rgb(227, 255, 246);
+        }
+        #area2{
+            display: flex;
+            width: 50%;
+            border: 2px solid rgba(230, 75, 228, 0.086);
+            font: italic bold 16px/20px Georgia, serif;
+            background-color: rgb(218, 225, 174);
+        }
+        #codeArea{
+            display: flex;
+            width: 100%;
+            height: 50vh;
+            background-color: antiquewhite;
+        }
+        .display iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                background-color: rgb(198, 228, 255);
+            }
+     </style>
+    </head>
+
+
+    <body>
+        <div   class ="display">
+            <iframe id="previewArea"></iframe>
+
+        </div>
+    <div  id="codeArea">
+    
+        <textarea id="area1"  placeholder="Type your HTML code here......."  cols="30" rows="10" oninput="lw()"></textarea>
+        <textarea id="area2"  placeholder="Type your CSS and Javascript code here......." cols="30" rows="10" oninput="lw()"></textarea>
+    </div>
+    </body>
+</html>
